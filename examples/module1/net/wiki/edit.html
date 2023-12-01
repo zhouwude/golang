@@ -1,0 +1,10 @@
+<h1>Editing {{.Title |html}}</h1>
+<!-- |html 部分告诉 template 引擎在输出 FieldName 的值之前要通过 html 格式化它。
+    他会转义特殊的 html 字符（ 如：会将 > 替换成 &gt; ）, 这样可以防止用户的数据破坏 HTML 表单。
+    |html 用起来就和 Linux 的 | （管道）类似，将前面命令的输出作为 | 后面命令的输入
+    printf "%s" 格式化 .Body 得值 
+ -->
+<form action="/save/{{.Title |html}}" method="POST">
+<div><textarea name="body" rows="20" cols="80">{{printf "%s" .Body|html}}</textarea></div>
+<div><input type="submit" value="Save"></div>
+</form>
