@@ -28,6 +28,7 @@ func mainbuffer() {
 	fmt.Println("sending", 10)
 	c <- 10
 	fmt.Println("sent", 10)
+
 	/*
 			sending 10
 		sent 10

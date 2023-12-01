@@ -8,6 +8,10 @@ func main() {
 	for i := 0; i < 3; i++ {
 		fmt.Println(i)
 	}
+	for i := 0; ; i++ {
+		// 定义一个死循环
+		fmt.Println(i)
+	}
 	fullString := "hello world"
 	fmt.Println(fullString)
 	for i, c := range fullString {
