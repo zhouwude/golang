@@ -40,4 +40,20 @@ func main() {
 		[1 2 3 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
 	[1 100 3 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]*/
 	fmt.Println(make([]int, 2)) //[0 0]
+
+	seasons := []string{"Spring", "Summer", "Autumn", "Winter"}
+	for ix, season := range seasons {
+		fmt.Printf("Season %d is: %s\n", ix, season)
+	}
+
+	var season string
+	for _, season = range seasons {
+		// season 只是 seasons 某个索引位置的值的一个拷贝，不能用来修改 seasons 该索引位置的值。
+		fmt.Printf("%s\n", season)
+	}
+	// 修改切片得值只能这样
+	for ix := range seasons {
+		// seasons[ix] = newValue for ;;也一样
+		fmt.Printf("%d", ix)
+	}
 }

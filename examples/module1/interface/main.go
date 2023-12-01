@@ -59,6 +59,8 @@ func main() {
 	//getFirst定义在 Array上 即使类型不一样也不行
 	// s.getFirst() s.getFirst undefined (type []int has no field or method
 	// Array(s) 类型转换
+	/*一个类型的值可以被转换成另一种类型的值。由于 Go 语言不存在隐式类型转换，
+	因此所有的转换都必须显式说明，就像调用一个函数一样（类型在这里的作用可以看作是一种函数）：*/
 	first := Array(s).getFirst()
 	fmt.Println(first) //1
 

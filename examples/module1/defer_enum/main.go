@@ -49,7 +49,7 @@ func main() {
 		b11
 		c11
 	)
-	//  ioto 是零值
+	//  iota 是零值
 	const (
 		a111 = iota
 		b111 = 10
