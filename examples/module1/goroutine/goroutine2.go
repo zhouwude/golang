@@ -7,7 +7,7 @@ import (
 
 // channel是引用类型，定义的时候 加上 chan string， chan int 可以是任何类型包括interface{}类型
 // 引用类型未初始化默认 nil
-func main() {
+func maing2() {
 	ch := make(chan string)
 	// 如果 2 个协程需要通信，你必须给他们同一个通道作为参数才行。
 	go sendData(ch)

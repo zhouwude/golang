@@ -46,7 +46,7 @@ func main() {
 	const N = 100
 	// 当声明数组时所有的元素都会被自动初始化为默认值 0。
 	var reqs [N]Request //{0 0 <nil>} 默认值
-	fmt.Println("-----", reqs)
+	fmt.Println("-------", reqs)
 	for i := 0; i < N; i++ {
 		req := &reqs[i] //指针
 		req.a = i

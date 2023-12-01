@@ -5,6 +5,7 @@ import (
 	"os"
 	"runtime"
 	"sync"
+	"time"
 )
 
 // tt := 100 简洁格式只能在函数体内
@@ -31,7 +32,9 @@ func main() {
 	defer fmt.Println("2")
 	defer fmt.Println("3")
 	// loopFunc()
-	// time.Sleep(time.Second)
+	loopFunc1()
+	time.Sleep(time.Second) //1s
+
 	const a int = 10 //在 Go 语言中，你可以省略类型说明符 [type]，因为编译器可以根据常量的值来推断其类型。
 	fmt.Println(a)
 	var b = 10
@@ -75,6 +78,7 @@ func main() {
 }
 
 func loopFunc() {
+	// defer 仅在函数返回时才会执行，在循环的结尾或其他一些有限范围的代码内不会执行。
 	lock := sync.Mutex{}
 	for i := 0; i < 3; i++ {
 		// go func(i int) {
@@ -82,5 +86,16 @@ func loopFunc() {
 		defer lock.Unlock()
 		fmt.Println("loopFunc:", i)
 		// }(i)
+	}
+}
+func loopFunc1() {
+	lock := sync.Mutex{}
+	for i := 0; i < 3; i++ {
+		// 协程去执行匿名函数 闭包函数
+		go func(i int) {
+			lock.Lock()
+			defer lock.Unlock()
+			fmt.Println("loopFunc:", i)
+		}(i)
 	}
 }

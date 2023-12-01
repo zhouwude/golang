@@ -16,6 +16,9 @@ func sendData1(ch chan string) {
 	ch <- "London"
 	ch <- "Beijing"
 	ch <- "Tokio"
+	//通道无需每次关闭
+	//关闭通道是为了告诉接受者通道再无新数据发送
+	//只有发送方需要关闭通道
 	close(ch) //
 }
 

@@ -29,7 +29,7 @@ func main() {
 		messages <- i
 	}
 	time.Sleep(5 * time.Second)
-	close(done)
+	close(done) //close done select也能接受到
 	time.Sleep(1 * time.Second)
 	fmt.Println("main process exit!")
 }

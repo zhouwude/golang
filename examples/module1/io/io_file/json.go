@@ -64,6 +64,7 @@ func mainjson() {
 	}
 	jsonStr := `{"Status":{"Text":"zhowuude"}}`
 	user := User{Status{""}}
+	// 给 user 设置值 必须传递指针否则就是拷贝
 	json.Unmarshal([]byte(jsonStr), &user)
 	fmt.Println(user)
 

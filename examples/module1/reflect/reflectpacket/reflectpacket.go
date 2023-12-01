@@ -122,7 +122,7 @@ func main() {
 	// call the first method, which is String():
 	// 一个切片在未初始化之前默认为 nil 引用类型未初始化就是 nil 而值类型是该类型对应的零值。
 	results := value.Method(0).Call(nil)
-	fmt.Println(value.Method(0).Type()) //func() string
+	fmt.Println(value.Method(0).Type()) //func() String
 	fmt.Println(value.Method(0).Kind()) //func
 	fmt.Println(results)                // [Ada - Go - Oberon]
 	// e 2

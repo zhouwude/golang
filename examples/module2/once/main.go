@@ -19,6 +19,7 @@ func (s *SliceNum) Add(elem int) *SliceNum {
 	return s
 }
 
+// 保证代码执行一次
 func main() {
 	var once sync.Once
 	s := NewSlice()

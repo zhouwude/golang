@@ -7,11 +7,11 @@ import (
 	"strings"
 )
 
-// A ParseError indicates an error in converting a word into an integer.
+// ParseError表示在将单词转换为整数时出现错误。
 type ParseError struct {
 	Index int    // The index into the space-separated list of words.
 	Word  string // The word that generated the parse error.
-	Err   error  // The raw error that precipitated this error, if any.
+	Err   error  // 导致这个错误的原始错误(如果有的话)。
 }
 
 // String returns a human-readable error message.

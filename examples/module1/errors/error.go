@@ -7,7 +7,7 @@ import (
 
 var errNotFound error = errors.New("Not found error")
 
-func mainE() {
+func main() {
 	fmt.Printf("error: %v", errNotFound)
 	// if len(os.Args) > 1 && (os.Args[1] == "-h" || os.Args[1] == "--help") {
 	// 	err = fmt.Errorf("usage: %s infile.txt outfile.txt", filepath.Base(os.Args[0]))
@@ -22,6 +22,12 @@ func mainE() {
 	fmt.Println(s, len(s), cap(s)) //[0 0 0 0 0 0 0 0 0 0] 10 100
 	s = s[:len(s)+1]
 	fmt.Println(s, len(s), cap(s)) //[0 0 0 0 0 0 0 0 0 0 0] 11 100 扩容
+
+	// **创建一个 error
+	fmt.Println(errors.New("this is error"))
+	fmt.Println(fmt.Errorf("%s", "this is a error"))
+	// this is error
+	// this is a error
 }
 
 // func Sqrt(f float64) (float64, error) {

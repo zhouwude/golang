@@ -29,11 +29,16 @@ func main() {
 	mt := MyType{Name: "test", Address: Address{City: "shanghai"}}
 	b, _ := json.Marshal(&mt)
 	fmt.Println(string(b))
+	mt1 := MyType{}
+	fmt.Println(mt)
+	// {test {shanghai}}
+	// //{{} 0 0} 解构体初始化不需要一定给变量赋值不赋值默认给类型的零值
+	fmt.Println(mt1) //{ {}} 都是空字符串
 	myType := reflect.TypeOf(mt)
 	name := myType.Field(0)
 	tag := name.Tag.Get("json")
 	println(tag)
-	return
+	// return
 	tb := TypeB{P2: "p2", TypeA: TypeA{P1: "p1"}}
 	//可以直接访问 TypeA.P1
 	println(tb.P1)
@@ -70,6 +75,20 @@ func main() {
 	// m := new(matrix.matrix)
 	// make 只用在 slice map channel
 
+	t11 := TypeA{"zhouwude"}
+	cTypeA(t11)
+	fmt.Println("t11:", t11) //t11: {zhouwude}
+	pTypeA(&t11)
+	fmt.Println("t11:", t11) //t11: {meibing}
+}
+
+//TypeA被拷贝
+func cTypeA(t TypeA) {
+	t.P1 = "meibing"
+}
+func pTypeA(t *TypeA) {
+	t.P1 = "meibing" //一样会自动解引用
+	// (*t).P1 = "没冰"
 }
 func test2(a int) (x, y int) {
 	x = a * 2

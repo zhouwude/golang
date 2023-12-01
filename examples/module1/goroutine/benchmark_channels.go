@@ -41,7 +41,7 @@ func BenchmarkChannelBuffered(b *testing.B) {
 		for i := 0; i < b.N; i++ {
 			ch <- i
 		}
-		close(ch)
+		close(ch) //关闭通道
 	}()
 	for range ch {
 	}

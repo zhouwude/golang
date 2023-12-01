@@ -43,6 +43,7 @@ func main() {
 	// 如果 f 函数声明的合适，HandlerFunc(f) 就是一个执行了 f 函数的处理器对象。
 	// HandlerFunc(func)相当于类型转换 把一个一样的函数转成HandlerFunc格式 因为HandlerFunc实现了 Handle接口
 	// HandlerFunc是一个类型 而不是一个方法
+	// http.HandleFunc("/hello/", helloHandler)
 	http.Handle("/", http.HandlerFunc(Logger))
 	http.Handle("/go/hello", http.HandlerFunc(HelloServer))
 	// The counter is published as a variable directly.

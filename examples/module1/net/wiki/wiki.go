@@ -36,7 +36,7 @@ func init() {
 
 			         ******这就是模板缓存 推荐用法
 		*/
-		//函数参数两个参数 正好ParseFiles 返回两个参数 可以这样调用 nice
+		//函数参数两个参数 正好ParseFiles 返回两个参数 可以这样直接调用 nice
 		templates[tmpl] = template.Must(template.ParseFiles(tmpl + ".html"))
 	}
 }

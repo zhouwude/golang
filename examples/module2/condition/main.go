@@ -6,11 +6,13 @@ import (
 	"time"
 )
 
+// 一个队列
 type Queue struct {
 	queue []string
 	cond  *sync.Cond
 }
 
+// 让 一组goroutine 在满足特定的条件下被唤醒
 func main() {
 	q := Queue{
 		queue: []string{},
@@ -33,6 +35,7 @@ func (q *Queue) Enqueue(item string) {
 	defer q.cond.L.Unlock()
 	q.queue = append(q.queue, item)
 	fmt.Printf("putting %s to queue, notify all\n", item)
+	//唤醒通知消费者 有数据了 不唤醒这个q.cond.L会一直锁住
 	q.cond.Broadcast()
 }
 
