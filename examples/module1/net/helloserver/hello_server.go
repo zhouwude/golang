@@ -9,6 +9,7 @@ import (
 // http.Handler是一个接口 实现了ServeHTTP 方法就行
 type Hello struct{}
 
+// 任何提供了接口方法实现代码的类型都隐式地实现了该接口，而不用显式地声明。
 func (h Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Hello!")
 }

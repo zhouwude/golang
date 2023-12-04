@@ -1,4 +1,4 @@
-//Copyright 2009 The Go Authors. All rights reserved.
+// Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 package main
@@ -87,8 +87,8 @@ func HelloServer(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "hello, world!\n")
 }
 
-//这使得Counter满足expvar。Var接口，以便我们可以导出
-//直接调用。
+// 这使得Counter满足expvar。Var接口，以便我们可以导出
+// 直接调用。
 func (ctr *Counter) String() string { return fmt.Sprintf("%d", ctr.n) }
 
 // 实现 http调用接口

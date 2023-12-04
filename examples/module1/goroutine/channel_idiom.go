@@ -12,6 +12,7 @@ func mainidiom1() {
 	time.Sleep(1e9)
 }
 
+// 通道的工厂模板：以下函数是一个通道工厂，启动一个匿名函数作为协程以生产通道：
 func pump2() chan int {
 	ch := make(chan int)
 	// 匿名立即执行函数的协程

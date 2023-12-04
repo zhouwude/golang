@@ -1,7 +1,8 @@
 // rpc_server.go
 // after client-exits the server shows the message:
-//       1:1234: The specified network name is no longer available.
-//       2011/08/01 16:19:04 rpc: rpc: server cannot decode request: WSARecv tcp 127.0.0.
+//
+//	1:1234: The specified network name is no longer available.
+//	2011/08/01 16:19:04 rpc: rpc: server cannot decode request: WSARecv tcp 127.0.0.
 package main
 
 import (
@@ -24,6 +25,7 @@ func mains() {
 	if e != nil {
 		log.Fatal("Starting RPC-server -listen error:", e)
 	}
+
 	/*对每一个进入到 listener 的请求，都是由协程去启动一个 http.Serve(listener, nil)
 	，为每一个传入的 HTTP 连接创建一个新的服务线程。
 	我们必须保证在一个特定的时间内服务器是唤醒状态

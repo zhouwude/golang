@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -24,7 +24,8 @@ func main() {
 	res, err := c.Do(request)
 	// res, err := http.Get(url)
 	checkError(err)
-	data, err := ioutil.ReadAll(res.Body)
+	// data, err := ioutil.ReadAll(res.Body) 废弃
+	data, err := io.ReadAll(res.Body)
 	checkError(err)
 	fmt.Printf("Got: %q", string(data))
 }

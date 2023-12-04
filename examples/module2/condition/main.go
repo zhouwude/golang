@@ -40,6 +40,7 @@ func (q *Queue) Enqueue(item string) {
 }
 
 func (q *Queue) Dequeue() string {
+	// 进来就上锁
 	q.cond.L.Lock()
 	defer q.cond.L.Unlock()
 	for len(q.queue) == 0 {
