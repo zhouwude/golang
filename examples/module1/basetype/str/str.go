@@ -72,5 +72,6 @@ func main() {
 	// 如何获取一个字符串的字节数：len(str)
 	// 如何获取一个字符串的字符数：
 	fmt.Println(len([]rune("周武德"))) //3
+	fmt.Println(utf8.RuneCountInString("周武德"))
 
 }
