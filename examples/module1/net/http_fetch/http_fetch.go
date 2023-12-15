@@ -3,7 +3,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 )
@@ -16,7 +16,7 @@ func main() {
 	res, err := http.Get("http://www.google.com")
 	CheckError(err)
 	// ioutil将整个文件的内容读到或者写到一个文件里
-	data, err := ioutil.ReadAll(res.Body)
+	data, err := io.ReadAll(res.Body)
 	CheckError(err)
 	fmt.Printf("Got: %q", string(data))
 }
