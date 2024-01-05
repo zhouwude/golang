@@ -3,6 +3,7 @@ package main
 var keyChar = []byte("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 func genKey(n int) string {
+	// fmt.Println([]byte("zhouwudevrvf"))
 	if n == 0 {
 		return string(keyChar[0])
 	}

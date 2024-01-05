@@ -89,6 +89,7 @@ func loopFunc() {
 	}
 }
 func loopFunc1() {
+
 	lock := sync.Mutex{}
 	for i := 0; i < 3; i++ {
 		// 协程去执行匿名函数 闭包函数

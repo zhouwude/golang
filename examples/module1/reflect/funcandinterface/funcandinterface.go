@@ -33,6 +33,7 @@ func (l *List) Append(val int) {
 	*l = append(*l, val)
 }
 
+// interface{}
 type Appender interface {
 	Append(int)
 }

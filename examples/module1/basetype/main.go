@@ -39,7 +39,8 @@ func main() {
 	fmt.Println(strconv.FormatInt(0365, 10))  //245
 	// 把其他进制转换为10进制
 	fmt.Println(strconv.ParseInt("1010101", 2, 64)) //85
-	fmt.Println(math.MaxInt8)                       //127
+	fmt.Println(math.MaxInt8)
+	//127
 	a, b := math.Modf(2.34)
 	fmt.Println(a, b) //2 0.33999999999999986
 	a++

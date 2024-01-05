@@ -18,7 +18,7 @@ type (
 
 // 带标签的解构体
 type MyType struct {
-	Name string `json:"name"`
+	Name string `json:"name"` //annotation 注解kubernetes常规操作
 	Address
 }
 type Address struct {
@@ -37,7 +37,7 @@ func main() {
 	myType := reflect.TypeOf(mt)
 	name := myType.Field(0)
 	tag := name.Tag.Get("json")
-	println(tag)
+	println("tag------------", tag)
 	// return
 	tb := TypeB{P2: "p2", TypeA: TypeA{P1: "p1"}}
 	//可以直接访问 TypeA.P1
@@ -82,7 +82,7 @@ func main() {
 	fmt.Println("t11:", t11) //t11: {meibing}
 }
 
-//TypeA被拷贝
+// TypeA被拷贝
 func cTypeA(t TypeA) {
 	t.P1 = "meibing"
 }

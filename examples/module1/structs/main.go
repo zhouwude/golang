@@ -5,7 +5,7 @@ import (
 )
 
 type MyType struct {
-	Name string `json:"name"`
+	Name string `json:"name00000"`
 }
 
 func main() {
