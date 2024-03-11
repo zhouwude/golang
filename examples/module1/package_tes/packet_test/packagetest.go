@@ -20,5 +20,6 @@ func main() {
 	output := format.Number(num)
 	fmt.Println(output)
 	fmt.Println(trans.Pi) //3.141592653589793
+	// histogram_quantile(0.95, sum(rate(httpserver_execution_latency_seconds_bucket[5m])) by (le))
 
 }
